@@ -18,6 +18,9 @@ original start time as reference.
 and playing a 'beep' sound.
 * Instead of having a timestamp file for start/paused, have the script determine when the
 expected time for the alarm to go off, when the time expires, sound the alarm.
+* Can do something like eval in basic bash to run a subprocess:
+    $ eval "sleep 4 && echo $test"&
+    [1] 41569
 
 Pomo directory:
 - $HOME/.config/pomo/ : The configuration directory

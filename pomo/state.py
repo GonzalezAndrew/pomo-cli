@@ -21,10 +21,14 @@ class State():
         self.state_int = 0
 
     def pause_state(self):
+        ''' Change the current state to PAUSED.
+        '''
         self.state = "PAUSED"
         self.state_int = 1
 
     def lock_state(self):
+        ''' Change the current state to LOCKED.
+        '''
         self.state = "LOCKED"
         self.state_int = 2
 
