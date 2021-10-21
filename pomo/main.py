@@ -38,6 +38,13 @@ from typing import Sequence
 
 import pomo.constants as C
 
+from pomo.commands.start import start
+from pomo.commands.pause import pause
+from pomo.commands.status import status
+from pomo.commands.stop import stop
+from pomo.commands.config import config
+
+
 def main(argv: Optional[Sequence[str]] = None) -> int:
     argv = argv if argv is not None else sys.argv[1:]
 
