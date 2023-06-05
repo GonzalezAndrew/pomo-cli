@@ -5,7 +5,7 @@
                 -d | --duration: duration in minutes or seconds.
                 -s | --short: short break (5 minutes).
                 -l | --long: long break (15 minutes).
-            status: Show how much time is left in the current pomo tracker. 
+            status: Show how much time is left in the current pomo tracker.
                 -f | --format: show the time in a specific format.
             stop: Stop the clock & reset.
             pause: Pause the clock & no reset.
@@ -30,19 +30,17 @@ Possible:
 - Show the remanining time in tmux status bar, ex: (12:43)
 
 '''
-
 import argparse
 import sys
 from typing import Optional
 from typing import Sequence
 
 import pomo.constants as C
-
-from pomo.commands.start import start
+from pomo.commands.config import config
 from pomo.commands.pause import pause
+from pomo.commands.start import start
 from pomo.commands.status import status
 from pomo.commands.stop import stop
-from pomo.commands.config import config
 
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
@@ -64,9 +62,9 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     # add the start command
     start = subparser.add_parser('start', help='Start the pomo timer.')
-    start.add_argument("-d", "--duration", default=25 ,help="The duration of the pomo timer. Default 25 minutes.")
-    start.add_argument("-s", "--short-break", default=5, help="Take a short break. Default 5 minutes.")
-    start.add_argument("-l", "--long-break", default=10, help="Take a long break. Default 10 minutes.")
+    start.add_argument('-d', '--duration', default=25, help='The duration of the pomo timer. Default 25 minutes.')
+    start.add_argument('-s', '--short-break', default=5, help='Take a short break. Default 5 minutes.')
+    start.add_argument('-l', '--long-break', default=10, help='Take a long break. Default 10 minutes.')
 
     # add the stop command
     stop = subparser.add_parser('stop', help='Stop and reset the pomo timer.')
@@ -98,6 +96,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         return 0
 
     args = parser.parse_args(argv)
+
 
 if __name__ == '__main__':
     SystemExit(main())
