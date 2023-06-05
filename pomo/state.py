@@ -15,21 +15,22 @@ start command:
 '''
 import os
 
+
 class State():
     def __init__(self):
-        self.state = "READY"
+        self.state = 'READY'
         self.state_int = 0
 
     def pause_state(self):
         ''' Change the current state to PAUSED.
         '''
-        self.state = "PAUSED"
+        self.state = 'PAUSED'
         self.state_int = 1
 
     def lock_state(self):
         ''' Change the current state to LOCKED.
         '''
-        self.state = "LOCKED"
+        self.state = 'LOCKED'
         self.state_int = 2
 
     def __config_pomo_dir(self):
@@ -41,7 +42,7 @@ class State():
         ''' Configure the temporary pomo directory.
         '''
         pass
-    
+
     def __create_timestamp_file(self, overwrite: bool = False):
         ''' Create the timestamp file in the temp directory.
         :params overwrite: Overwrite the timestamp file. This is used when
